@@ -379,9 +379,8 @@ document.getElementById("page"+page).classList.add("active");
 
 function startMusic(){
 let music=document.getElementById("bgMusic");
-music.volume=0.20;
+music.volume=0.15;
 music.play().catch(()=>{});
-
 }
 
 function createHearts(){
@@ -409,6 +408,25 @@ hearts.appendChild(heart);
 }
 
 createHearts();
+
+const music = document.getElementById("bgMusic");
+const videos = document.querySelectorAll("video");
+
+videos.forEach(video => {
+
+video.addEventListener("play", () => {
+music.pause();
+});
+
+video.addEventListener("pause", () => {
+music.play().catch(()=>{});
+});
+
+video.addEventListener("ended", () => {
+music.play().catch(()=>{});
+});
+
+});
 
 </script>
 
