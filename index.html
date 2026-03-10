@@ -146,10 +146,6 @@ to{transform:translateY(-10vh);}
 
 <body>
 
-<audio id="bgMusic" loop preload="auto">
-<source src="music/love.mp3" type="audio/mpeg">
-</audio>
-
 <div class="hearts" id="hearts"></div>
 
 <!-- PAGE 1 -->
@@ -157,10 +153,9 @@ to{transform:translateY(-10vh);}
 <div class="page active" id="page1">
 
 <h1>Hi Tanya ❤️</h1>
-
 <p>If you are seeing this page, it means you followed a small trail I left for you.</p>
 
-<button onclick="startMusic(); nextPage(2)">
+<button onclick="nextPage(2)">
 Click here if you want to see something special
 </button>
 
@@ -370,71 +365,38 @@ else msg.innerText="Chup chap upar wala button press kar do";
 }
 
 function nextPage(page){
-
-document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
-
-document.getElementById("page"+page).classList.add("active");
-
+    document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+    document.getElementById("page"+page).classList.add("active");
+    
+    // Naya page aate hi screen upar scroll ho jaye
+    window.scrollTo(0, 0); 
 }
 
-function startMusic(){
 
-const music = document.getElementById("bgMusic");
+    // 1. Function define karo jo ek heart banayega
+    function createHearts() {
+        const heartsContainer = document.getElementById("hearts");
+        if (!heartsContainer) return; // Agar container nahi mila toh stop
 
-music.volume = 0.20;
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+        
+        // Random style settings
+        heart.style.left = Math.random() * 100 + "%";
+        heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+        heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+        
+        heartsContainer.appendChild(heart);
 
-music.currentTime = 0;
+        // Memory clean-up (6 sec baad delete)
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
 
-music.play().catch(()=>{});
-
-}
-
-function createHearts(){
-
-const hearts=document.getElementById("hearts");
-
-for(let i=0;i<30;i++){
-
-let heart=document.createElement("div");
-
-heart.className="heart";
-
-heart.innerHTML="❤️";
-
-heart.style.left=Math.random()*100+"%";
-
-heart.style.fontSize=(Math.random()*20+15)+"px";
-
-heart.style.animationDuration=(Math.random()*5+5)+"s";
-
-hearts.appendChild(heart);
-
-}
-
-}
-
-createHearts();
-
-const music = document.getElementById("bgMusic");
-const videos = document.querySelectorAll("video");
-
-videos.forEach(video => {
-
-video.addEventListener("play", () => {
-music.pause();
-});
-
-video.addEventListener("pause", () => {
-music.play().catch(()=>{});
-});
-
-video.addEventListener("ended", () => {
-music.play().catch(()=>{});
-});
-
-});
-
+    // 2. Har 500 milliseconds (0.5 sec) mein naya heart banao
+    setInterval(createHearts, 500);
 </script>
-
 </body>
 </html>
