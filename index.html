@@ -147,7 +147,7 @@ to{transform:translateY(-10vh);}
 <body>
 
 <audio id="bgMusic" loop>
-<source src="Music/love.mp3" type="audio/mp3">
+<source src="music/love.mp3" type="audio/mp3">
 </audio>
 
 <div class="hearts" id="hearts"></div>
@@ -196,9 +196,11 @@ woh chhote chhote moments hain jo mere liye aaj bhi kaafi special hain. 📸✨
 </p>
 
 <div class="gallery">
-  <img src="Images/tanya1.jpg" alt="Tanya">
-  <img src="Images/tanya2.jpg" alt="Tanya">
-  <img src="Images/tanya3.jpg" alt="Tanya">
+
+<img src="images/tanya1.jpg">
+<img src="images/tanya2.jpg">
+<img src="images/tanya3.jpg">
+
 </div>
 
 
@@ -246,9 +248,9 @@ Baaki jo bhi messy aur imperfect cheezein hain… unhe hum time ke saath theek k
 
 <div class="gallery">
 
-<img src="Images/us1.jpg">
-<img src="Images/us2.jpg">
-<img src="Images/us3.jpg">
+<img src="images/us1.jpg">
+<img src="images/us2.jpg">
+<img src="images/us3.jpg">
 
 </div>
 
@@ -377,8 +379,8 @@ document.getElementById("page"+page).classList.add("active");
 
 function startMusic(){
 let music=document.getElementById("bgMusic");
-music.volume=0.35;
-music.play();
+music.volume=0.20;
+music.play().catch(()=>{});
 
 }
 
