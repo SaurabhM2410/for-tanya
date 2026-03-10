@@ -146,8 +146,8 @@ to{transform:translateY(-10vh);}
 
 <body>
 
-<audio id="bgMusic" loop>
-<source src="music/love.mp3" type="audio/mp3">
+<audio id="bgMusic" loop preload="auto">
+<source src="music/love.mp3" type="audio/mpeg">
 </audio>
 
 <div class="hearts" id="hearts"></div>
@@ -378,9 +378,15 @@ document.getElementById("page"+page).classList.add("active");
 }
 
 function startMusic(){
-let music=document.getElementById("bgMusic");
-music.volume=0.15;
+
+const music = document.getElementById("bgMusic");
+
+music.volume = 0.20;
+
+music.currentTime = 0;
+
 music.play().catch(()=>{});
+
 }
 
 function createHearts(){
