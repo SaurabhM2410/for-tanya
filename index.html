@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Tanya ❤️</title>
+
+<style>
+
+body{
+font-family: "Segoe UI", sans-serif;
+margin:0;
+background: linear-gradient(135deg,#ffe6f0,#f3e8ff);
+color:#333;
+text-align:center;
+overflow-x:hidden;
+}
+
+.page{
+display:none;
+padding:40px 20px;
+min-height:100vh;
+}
+
+.active{
+display:block;
+animation:fade 1s ease;
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+color:#d63384;
+}
+
+button{
+padding:12px 22px;
+margin:10px;
+border:none;
+border-radius:25px;
+background:#ff66a3;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+background:#ff3d8b;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+margin-top:30px;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+transition:0.3s;
+}
+
+.gallery img{
+width:100%;
+border-radius:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+img{
+max-width:100%;
+height:auto;
+}
+
+.tanya-gallery{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:15px;
+}
+
+.tanya-gallery img{
+  width:260px;
+  height:340px;
+  object-fit:cover;
+}
+
+
+.card-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+margin-top:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:15px;
+width:220px;
+box-shadow:0 6px 12px rgba(0,0,0,0.1);
+}
+
+video{
+max-width:90%;
+border-radius:15px;
+margin-top:20px;
+}
+
+.note{
+background:white;
+padding:30px;
+max-width:600px;
+margin:auto;
+border-radius:15px;
+box-shadow:0 8px 18px rgba(0,0,0,0.15);
+}
+
+.hearts{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+pointer-events:none;
+}
+
+.heart{
+position:absolute;
+color:#ff5ca2;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+from{transform:translateY(100vh);}
+to{transform:translateY(-10vh);}
+}
+
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop playsinline preload="auto">
+<source src="./Music/love.mp3" type="audio/mpeg">
+</audio>
+
+<div class="hearts" id="hearts"></div>
+
+<!-- PAGE 1 -->
+
+<div class="page active" id="page1">
+
+<h1>Hi Tanya ❤️</h1>
+
+<p>If you are seeing this page, it means you followed a small trail I left for you.</p>
+
+<button onclick="startMusic(); nextPage(2)">
+Click here if you want to see something special
+</button>
+
+<button onclick="notInterested()">Not Interested</button>
+
+<p id="warning"></p>
+
+</div>
+
+
+<!-- PAGE 2 -->
+
+<div class="page" id="page2">
+
+<h1>A small message for you ha pata hai small toh bilkul nhi hone wala</h1>
+
+<p>
+Tanya,
+
+Sach bolu… yeh page banate waqt mujhe samajh aaya ki kuch log life me aise aate hain jo normal din ko bhi thoda sa special bana dete hain.
+
+Tum unhi logon me se ho. 🌙
+
+Tumhari smile, tumhari awaaz, aur tumhara woh calm sa nature… pata nahi kaise, par dheere-dheere mere routine ka hissa ban gaya tha.
+
+Kabhi kabhi bas itna hi kaafi hota hai ki koi insaan duniya ke noise me ek **peace jaisa feel karwaye**.
+
+Aur mere liye tum waisi hi ho. 🤍
+
+Neeche jo photos hain na… woh sirf pictures nahi hain,
+woh chhote chhote moments hain jo mere liye aaj bhi kaafi special hain. 📸✨
+
+</p>
+
+<div class="gallery">
+
+<img src="./Images/tanya1.jpg">
+<img src="./Images/tanya2.jpg">
+<img src="./Images/tanya3.jpg">
+
+</div>
+
+
+<button onclick="nextPage(3)">Next</button>
+
+</div>
+
+
+<!-- PAGE 3 -->
+
+<div class="page" id="page3">
+
+<h1>A Note For You</h1>
+
+<div class="note">
+
+<p>
+
+Kabhi kabhi main sochta hoon… life itni simple bhi ho sakti thi,
+agar hum bas ek dusre ke saath baith kar chhoti chhoti baatein share kar paate.
+Kuch khaas nahi… bas woh normal moments jo kisi khaas insaan ke saath special ban jaate hain. 🌙
+
+Mujhe pata hai life perfect nahi hoti.
+Par kya pata… shayad hum dono milkar isse thoda better bana sakte hain. 🤍
+
+Toh ek honest sa sawaal hai…
+kya hum phir se saath chalne ki koshish kar sakte hain?
+Baaki jo bhi messy aur imperfect cheezein hain… unhe hum time ke saath theek kar lenge. ✨
+
+
+</p>
+
+</div>
+
+<button onclick="nextPage(4)">Next</button>
+
+</div>
+
+
+<!-- PAGE 4 -->
+
+<div class="page" id="page4">
+
+<h1>Our Sweet & Salty Memories</h1>
+
+<div class="gallery">
+
+<img src="./Images/us1.jpg">
+<img src="./Images/us2.jpg">
+<img src="./Images/us3.jpg">
+
+</div>
+
+<video controls preload="metadata">
+  <<source src="./videos/video1.mp4">
+  Your browser does not support the video tag.
+</video>
+
+<p>One of the most special moments we shared together.</p>
+
+<div class="card-container">
+
+<div class="card">This moment is still my favorite.</div>
+
+<div class="card">Some memories never fade.</div>
+
+<div class="card">You made ordinary days special.</div>
+
+</div>
+
+<button onclick="nextPage(5)">Next</button>
+
+</div>
+
+
+<!-- PAGE 5 -->
+
+<div class="page" id="page5">
+
+<video controls>
+<source src="videos/video1.mp4" type="video/mp4">
+</video>
+
+<p>Is video ka har lafz bas ek hi cheez repeat krta hai — mujhe zindagi me sirf tum hi chaiye.</p>
+
+<video controls>
+<source src="videos/video2.mp4" type="video/mp4">
+</video>
+
+<p>Is moment mein na future ka dar h, na past ka load… bas aap ho, main hu, or saccha sa sukoon h.</p>
+
+<video controls>
+<source src="videos/video3.mp4" type="video/mp4">
+</video>
+
+<p>Yeh woh pal hai jaha sab kuch ruk sa jata hai, bas tum ho, me hoon, or hamari chhoti si duniya.</p>
+
+<video controls>
+<source src="videos/video4.mp4" type="video/mp4">
+</video>
+
+<p>Jab bhi yeh video dekhta hu, lgta hai uss din ka thoda sa hissa aaj bhi mere sath betha hai</p>
+
+<video controls>
+<source src="videos/video5.mp4" type="video/mp4">
+</video>
+
+<p>Kbhi kbhi lgta h agr yeh moment freeze ho jaye na, toh main puri zindagi isi ek frame mein bita du.</p>
+
+<button onclick="nextPage(6)">Next</button>
+
+</div>
+
+
+<!-- FINAL PAGE -->
+
+<div class="page" id="page6">
+
+<h1>I Love You ❤️</h1>
+
+<p>
+Meri Rasmalaii,
+
+Pata nahi future kya likhega… par ek cheez mujhe aaj bhi utni hi clearly pata hai —
+maine tumhe kabhi lightly nahi liya.
+
+Tum sirf ek insaan nahi ho meri life me.
+Tum woh ehsaas ho jisse maine care, loyalty aur sachha pyaar samjha. 🤍
+
+Haan, shayad hum perfect nahi the.
+Par mera yakeen aaj bhi wahi hai — agar do log sach me ek dusre ko chahte hain, toh woh waqt ke saath apni messy aur imperfect cheezon ko theek kar hi lete hain.
+
+Aur mere liye…
+pyaar ka matlab aaj bhi simple hai —
+
+Tere jaisa,
+tere siwa,
+teri jagah…
+
+mujhe koi aur nahi chahiye. ❤️
+
+I LOVE YOU ENDLESSLY. ♾️
+
+</p>
+
+</div>
+
+
+<script>
+
+let clickCount=0;
+
+function notInterested(){
+
+clickCount++;
+
+const msg=document.getElementById("warning");
+
+if(clickCount==1) msg.innerText="Soch lo";
+
+else if(clickCount==2) msg.innerText="Phir soch lo";
+
+else if(clickCount==3) msg.innerText="Ek aur baar soch lo";
+
+else msg.innerText="Chup chap upar wala button press kar do";
+
+}
+
+function nextPage(page){
+
+document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+
+document.getElementById("page"+page).classList.add("active");
+
+}
+
+function startMusic(){
+let music=document.getElementById("bgMusic");
+music.volume=0.35;
+music.play().catch(function(error){
+console.log("Audio blocked until user interaction");
+});
+
+}
+
+function createHearts(){
+
+const hearts=document.getElementById("hearts");
+
+for(let i=0;i<30;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.fontSize=(Math.random()*20+15)+"px";
+
+heart.style.animationDuration=(Math.random()*5+5)+"s";
+
+hearts.appendChild(heart);
+
+}
+
+}
+
+createHearts();
+
+</script>
+
+</body>
+</html>
